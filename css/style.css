@@ -1,0 +1,72 @@
+/*Global Rules*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*some components*/
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+/*Mobile Screen*/
+@media (min-width: 415px) {
+    .container {
+        width: 100%;
+    }
+}
+
+/*Medium Screen (Ipad)*/
+@media (min-width: 821px) {
+    .container {
+        width: 800px;
+    }
+}
+
+/*Big Screen*/ 
+@media (min-width: 1215px) {
+    .container {
+        width: 1115px;
+    }
+}
+
+/*Styling Header*/
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.header .container nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.header .container::after {
+    content: '';
+    width: calc(100% - 30px);
+    height: 3px;
+    background-color: blue;
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+}
