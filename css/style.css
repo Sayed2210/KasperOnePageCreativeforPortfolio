@@ -17,6 +17,12 @@ html {
     scroll-behavior: smooth;
 }
 
+/*Tart Variables*/
+:root {
+    --main-color: #19c8fa;
+    --transparent-color: rgb(15 116 143 / 70%);
+}
+
 /*some components*/
 .container {
     padding-left: 15px;
@@ -47,6 +53,13 @@ html {
 }
 
 /*Styling Header*/
+.header {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
 .header .container {
     display: flex;
     justify-content: space-between;
@@ -54,19 +67,156 @@ html {
     position: relative;
 }
 
-.header .container nav {
+.header .container::after {
+    content: '';
+    width: calc(100% - 30px);
+    height: 1px;
+    background-color: blue;
+    position: absolute;
+    bottom: -1px;
+    left: 15px;
+}
+
+.header .logo img {
+    height: 60px;
+}
+
+.header nav {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
 
-.header .container::after {
-    content: '';
-    width: calc(100% - 30px);
-    height: 3px;
-    background-color: blue;
+.header nav .toggle-menu {
+    color: red;
+    z-index: 2;
+    font-size: 22px;
+}
+
+@media (min-width: 780px) {
+    .header nav .toggle-menu {
+        display: none;
+    }
+}
+
+.header nav ul {
+    display: flex;
+}
+
+@media (max-width: 780px) {
+    .header nav ul {
+        display: none;
+    }
+    .header nav .toggle-menu:hover + ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+    .header nav ul li a {
+        padding: 10px !important;
+    }
+}
+
+.header ul li a{
+    display: block;
+    padding: 40px 10px;
+    text-decoration: none;
+    color: blue;
+    font-size: 1.2em;
+    -o-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    transition: 0.3s;
+    position: relative;
+    z-index: 2;
+}
+
+.header ul li a.active,
+.header ul li a:hover {
+    color: var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+}
+
+.header nav .search-icon {
+    width: 40px;
+    height: 30px;
+    position: relative;
+    border-left: 2px solid rgb(201, 31, 31);
+    margin-left: 30px;
+}
+
+.header nav .search-icon i {
     position: absolute;
-    bottom: 0;
-    left: 30px;
+    top: 50%;
+    left: 50%;
+    -o-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+/*Style landing section*/
+.landing {
+    position: relative;
+    background-color: black;
+    background-image: url(/img/pexels-francesco-ungaro-2835436.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+
+.landing .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 50%);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.landing .text {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 50%;   
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background-color: var(--transparent-color);
+    padding: 50px;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.landing .text .content {
+    max-width: 500px;
+}
+
+.landing .text h2 {
+    font-weight: normal;
+    font-size: 2em;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.landing .text p {
+    font-size: .9em;
+    line-height: 1.6;
+}
+
+@media (max-width : 780px) {
+    .landing .text {
+        width: 100%;
+    }
+    .landing .text .content {
+        max-width: 100%cd;
+    }
 }
