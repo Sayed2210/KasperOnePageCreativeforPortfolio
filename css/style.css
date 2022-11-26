@@ -404,7 +404,7 @@ html {
 }
 .design .text {
     color: white;
-    background-color: var(--main-color);
+    background-color: var(--transparent-color);
     padding: 50px;
 }
 .design .text h2 {
@@ -485,11 +485,11 @@ html {
     bottom: 0;
   }
 .portfolio .imgs-container .img-box:hover img {
-    transform: scale(1.1) rotate(4deg);
+    -o-transform: scale(1.1) rotate(4deg);
     -webkit-transform: scale(1.1) rotate(4deg);
     -moz-transform: scale(1.1) rotate(4deg);
     -ms-transform: scale(1.1) rotate(4deg);
-    -o-transform: scale(1.1) rotate(4deg);
+    transform: scale(1.1) rotate(4deg);
 }
 .portfolio .imgs-container .img-box .caption h4 {
     font-weight: normal;
@@ -508,3 +508,38 @@ html {
     text-transform: uppercase;
 }
 
+/*Style Video section*/
+.video {
+    position: relative;
+}
+.video video {
+    width: 100%;
+}
+
+.video .text {
+    position: absolute;
+    background-color: var(--transparent-color);
+    top: 50%;
+    -o-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.video .text h2 {
+    font-weight: normal;
+    margin: 40px 0 ;
+}
+.video .text p {
+    margin-bottom: 40px;
+}
+.video .text button {
+    background-color: black;
+    padding: 10px;
+    color: white;
+    margin-bottom: 50px;
+}
