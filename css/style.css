@@ -757,3 +757,44 @@ html {
     right: -9px;
     top: -26px;
 }
+
+/*Style quote Section*/
+.quote {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-image: url(/img/wallpaperflare.com_wallpaper\ \(15\).jpg);
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.quote::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 50%);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.quote .container {
+    position: relative;
+    z-index: 10;
+}
+.quote q {
+    display: block;
+    font-size: 2em;
+    color: white;
+    margin-bottom: 20px;
+}
+q::after {
+    content: '\f10e';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+}
+q::before {
+    content: '\f10d';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+}
+
