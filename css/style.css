@@ -543,3 +543,96 @@ html {
     color: white;
     margin-bottom: 50px;
 }
+
+/*Start About Section*/
+.about {
+    overflow: hidden;
+    text-align: center;
+    padding-top: var(--section-padding);
+    height: 800px;
+}
+
+.about img {
+    position: relative;
+    bottom: 0;
+    margin-top: -220px;
+    width: 100%;
+}
+@media (max-width: 767px) {
+    .about img {
+      bottom: -60px;
+      margin-top: -120px;
+    }
+  }
+
+/*Start Stats Section*/
+.stats {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    position: relative;
+    background-image: url(/img/wallpaperflare.com_wallpaper\ \(11\).jpg);
+    background-size: cover;
+    width: 100%;
+    text-align: center;
+}
+.stats::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 50%);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.stats .container {
+    position: relative;
+    display: flex;
+    color: white;
+    flex-wrap: wrap;
+    z-index: 100;
+}
+.stats .container .box {
+    padding: 50px;
+    background-color: var(--transparent-color);
+}
+
+@media (max-width: 767px) {
+    .stats .container .box {
+      flex-basis: 100%;
+    }
+  }
+@media (min-width: 768px) {
+    .stats .container .box {
+      flex-basis: 50%;
+    }
+  }
+@media (min-width: 992px) {
+    .stats .container .box {
+      flex-basis: 25%;
+    }
+  }
+.stats .container .box i{
+    display: flex;
+    width: 70px;
+    height: 70px;
+    -o-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-color);
+}
+
+.stats .container .box h2 {
+    font-size: 2.2em;
+    font-weight: normal;
+}
+.stats .container .box p {
+    font-size: 1.1em;
+    color: var(--secondary-color);
+}
